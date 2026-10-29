@@ -353,3 +353,4 @@ footer{background:#071629}
 .lab.is-open .meters b{color:var(--red)}
 input:focus,select:focus,textarea:focus{box-shadow:0 0 0 3px rgba(0,119,200,.15)}
 .avatar{color:var(--gold-2)}
+.copy .credit{color:#fff;font-weight:700;border-bottom:1px solid var(--gold-2)}.copy .credit:hover{color:var(--gold-2)}
