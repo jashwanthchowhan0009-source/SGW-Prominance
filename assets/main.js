@@ -8,7 +8,7 @@ const tel = p => "tel:" + p.replace(/\s/g, "");
 const page = document.body.dataset.page;
 
 const logo = `<svg width="46" height="46" viewBox="0 0 48 48" aria-hidden="true">
-  <path d="M30 4C18 4 9 11 9 20c0 6 4 9 10 11-5 0-9-2-11-5 1 10 9 18 20 18 9 0 15-5 15-12 0-6-5-9-11-10 4 0 7 1 9 3C41 15 37 4 30 4z" fill="#2b3a7a"/>
+  <path d="M30 4C18 4 9 11 9 20c0 6 4 9 10 11-5 0-9-2-11-5 1 10 9 18 20 18 9 0 15-5 15-12 0-6-5-9-11-10 4 0 7 1 9 3C41 15 37 4 30 4z" fill="#123a6b"/>
   <path d="M30 4c-8 1-14 6-14 12 0 4 3 6 7 7-6 0-11-3-12-8C13 8 21 3 30 4z" fill="#d32f3a"/></svg>`;
 const brand = `<a href="index.html" class="brand" aria-label="SGW Prominance home">${logo}
   <span class="brand-txt"><b>SGW <em class="pm">Prominance</em></b><small>uPVC Window Systems</small></span></a>`;
@@ -49,7 +49,7 @@ const menu = document.getElementById("menu"), burger = document.getElementById("
 burger.onclick = () => { menu.classList.toggle("open"); burger.classList.toggle("x"); };
 
 // Elevation drawings: data-elev="sliding|casement|door|french|bifold|tilt"
-const F = "#ffffff", S = "#1c2654", G = "#cfe6f5", A = "#c8962e";
+const F = "#ffffff", S = "#0b1f3a", G = "#cfe6f5", A = "#0077c8";
 function pane(x,y,w,h){return `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${G}" stroke="${S}" stroke-width="2"/>
   <path d="M${x+w*.15} ${y+h*.2} l${w*.25} -${h*.12} M${x+w*.15} ${y+h*.34} l${w*.4} -${h*.22}" stroke="#fff" stroke-width="3" opacity=".8"/>`;}
 function sash(x,y,w,h,open){ // open: 'l','r' hinge side for swing line, 's' sliding arrow

@@ -13,7 +13,7 @@
     let rnd = 7; const R = () => ((rnd = (rnd * 16807) % 2147483647) / 2147483647);
     const city = Array.from({ length: 14 }, () => ({ w: .05 + R() * .08, h: .18 + R() * .42, win: R() }));
     const trees = Array.from({ length: 6 }, () => ({ x: R(), r: .05 + R() * .05 }));
-    const cars = Array.from({ length: 3 }, (_, i) => ({ x: R(), v: (.06 + R() * .05) * (i % 2 ? -1 : 1), c: ["#d32f3a", "#2b3a7a", "#e2b75a"][i] }));
+    const cars = Array.from({ length: 3 }, (_, i) => ({ x: R(), v: (.06 + R() * .05) * (i % 2 ? -1 : 1), c: ["#d32f3a", "#123a6b", "#38b6ff"][i] }));
 
     function size() {
       const r = cv.getBoundingClientRect(), d = Math.min(devicePixelRatio || 1, 2);
@@ -160,7 +160,7 @@
       sash(g.rx, g.iy, g.sw, g.ih, g.b, tint);              // sliding sash (inner track)
       // handle
       const hx = g.rx + g.b * .42, hy = g.iy + g.ih * .5;
-      ctx.fillStyle = drag ? "#c8962e" : "#e8e8ea"; ctx.strokeStyle = "rgba(28,38,84,.35)";
+      ctx.fillStyle = drag ? "#0077c8" : "#e8e8ea"; ctx.strokeStyle = "rgba(28,38,84,.35)";
       ctx.beginPath(); ctx.roundRect(hx - 3, hy - 22, 6, 44, 3); ctx.fill(); ctx.stroke();
       ctx.restore();
       // spawn + particles (drawn over glass & into room)
@@ -235,7 +235,7 @@
       const panels = layout(st.type, w), n = panels.length, iw = FW - 2 * ft, ih = FH - 2 * ft, pw = iw / n;
       const col = st.color, dk = shade(col, col === "#ffffff" ? .8 : .7), dgu = st.glass.startsWith("DGU");
       let g = `<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8ccaf0"/><stop offset=".7" stop-color="#d7eefb"/><stop offset=".7" stop-color="#7fbf6a"/><stop offset="1" stop-color="#5a9a48"/></linearGradient>
-        <pattern id="mesh" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 0H4M0 0V4" stroke="#1c2654" stroke-width=".4" opacity=".5"/></pattern></defs>
+        <pattern id="mesh" width="4" height="4" patternUnits="userSpaceOnUse"><path d="M0 0H4M0 0V4" stroke="#0b1f3a" stroke-width=".4" opacity=".5"/></pattern></defs>
         <g transform="translate(${L},${T})">
         <rect x="${ft}" y="${ft}" width="${iw}" height="${ih}" fill="url(#sky)"/>`;
       panels.forEach((p, i) => {
@@ -256,16 +256,16 @@
           ${dgu ? `<rect x="${gx + 3}" y="${gy + 3}" width="${gw - 6}" height="${gh - 6}" fill="none" stroke="#9fb7c9" stroke-width=".8"/>` : ""}
           <path d="M${gx + gw * .15} ${gy + gh * .3}l${gw * .3} -${gh * .16}M${gx + gw * .15} ${gy + gh * .42}l${gw * .45} -${gh * .26}" stroke="#fff" stroke-width="2" opacity=".8"/>
           ${mesh.checked && oc ? `<rect x="${gx}" y="${gy}" width="${gw}" height="${gh}" fill="url(#mesh)"/>` : ""}
-          ${oc === "hinge-l" ? `<path d="M${gx + gw} ${gy} L${gx} ${gy + gh / 2} L${gx + gw} ${gy + gh}" fill="none" stroke="#c8962e" stroke-dasharray="5 4"/>` : ""}
-          ${oc === "hinge-r" ? `<path d="M${gx} ${gy} L${gx + gw} ${gy + gh / 2} L${gx} ${gy + gh}" fill="none" stroke="#c8962e" stroke-dasharray="5 4"/>` : ""}
-          ${oc === "tilt" ? `<path d="M${gx} ${gy + gh} L${gx + gw / 2} ${gy} L${gx + gw} ${gy + gh} M${gx} ${gy} L${gx + gw} ${gy + gh / 2} L${gx} ${gy + gh}" fill="none" stroke="#c8962e" stroke-dasharray="5 4"/>` : ""}
-          ${oc && oc.startsWith("slide") ? `<path d="M${x + pw / 2 - 16} ${ft + ih / 2}h32m-7-6l7 6-7 6" fill="none" stroke="#c8962e" stroke-width="2"/>` : ""}
+          ${oc === "hinge-l" ? `<path d="M${gx + gw} ${gy} L${gx} ${gy + gh / 2} L${gx + gw} ${gy + gh}" fill="none" stroke="#0077c8" stroke-dasharray="5 4"/>` : ""}
+          ${oc === "hinge-r" ? `<path d="M${gx} ${gy} L${gx + gw} ${gy + gh / 2} L${gx} ${gy + gh}" fill="none" stroke="#0077c8" stroke-dasharray="5 4"/>` : ""}
+          ${oc === "tilt" ? `<path d="M${gx} ${gy + gh} L${gx + gw / 2} ${gy} L${gx + gw} ${gy + gh} M${gx} ${gy} L${gx + gw} ${gy + gh / 2} L${gx} ${gy + gh}" fill="none" stroke="#0077c8" stroke-dasharray="5 4"/>` : ""}
+          ${oc && oc.startsWith("slide") ? `<path d="M${x + pw / 2 - 16} ${ft + ih / 2}h32m-7-6l7 6-7 6" fill="none" stroke="#0077c8" stroke-width="2"/>` : ""}
           ${oc ? `<rect x="${oc === "hinge-l" || oc === "fold" ? x + pw - pf / 2 - 2 : x + pf / 2 - 2}" y="${ft + ih / 2 - 12}" width="4" height="24" rx="2" fill="${shade(col, .55)}"/>` : ""}
         </g>`;
       });
       g += `        <rect x="${ft / 2}" y="${ft / 2}" width="${FW - ft}" height="${FH - ft}" fill="none" stroke="${col}" stroke-width="${ft - 2}"/>
         <rect x=".5" y=".5" width="${FW - 1}" height="${FH - 1}" fill="none" stroke="${dk}"/>
-        <g class="dim" stroke="#1c2654" fill="#1c2654" font-size="12" font-family="Inter,sans-serif">
+        <g class="dim" stroke="#0b1f3a" fill="#0b1f3a" font-size="12" font-family="Inter,sans-serif">
           <path d="M0 ${FH + 18}H${FW}M0 ${FH + 10}v16M${FW} ${FH + 10}v16" stroke-width="1"/>
           <text x="${FW / 2}" y="${FH + 36}" text-anchor="middle" stroke="none" font-weight="600">${w} mm</text>
           <path d="M-18 0V${FH}M-26 0h16M-26 ${FH}h16" stroke-width="1"/>
