@@ -17,7 +17,27 @@
   <p class="lead" style="color:#c7cde6">Five uPVC systems, all built on certified Prominance profiles.</p>
 </div></div>
 
-<section><div class="wrap">
+<section id="configurator"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Interactive elevation</span><h2>Design your window.</h2>
+    <p class="lead">Pick a system, set your opening size, finish and glass. The elevation redraws to scale. Tap the drawing to open it.</p></div>
+  <div class="cfg rv" id="cfg">
+    <div class="cfg-view" role="button" tabindex="0" aria-label="Open or close the window drawing"><svg id="cfgSvg" role="img" aria-label="Window elevation drawing"></svg><span class="cfg-tip">Tap to open / close</span></div>
+    <div class="cfg-panel">
+      <div class="cfg-group"><span class="lbl">System</span><div class="chips" data-k="type">
+        <button data-v="sliding" class="on">Sliding</button><button data-v="casement">Casement</button><button data-v="tilt">Tilt &amp; Turn</button><button data-v="door">Casement Door</button><button data-v="french">French Sliding</button><button data-v="bifold">Bi-Fold</button></div></div>
+      <div class="cfg-group"><label for="cw">Width <output id="cwo">1800 mm</output></label><input type="range" id="cw" min="600" max="4800" step="50" value="1800"></div>
+      <div class="cfg-group"><label for="ch">Height <output id="cho">1350 mm</output></label><input type="range" id="ch" min="600" max="2700" step="50" value="1350"></div>
+      <div class="cfg-group"><span class="lbl">Frame finish</span><div class="chips sw" data-k="color">
+        <button data-v="#ffffff" class="on"><i style="background:#fff"></i>White</button><button data-v="#b5804a"><i style="background:#b5804a"></i>Golden Oak</button><button data-v="#6b4428"><i style="background:#6b4428"></i>Walnut</button><button data-v="#3c4047"><i style="background:#3c4047"></i>Anthracite</button></div></div>
+      <div class="cfg-group"><span class="lbl">Glass</span><div class="chips" data-k="glass"><button data-v="Clear 5 mm" class="on">Clear 5 mm</button><button data-v="Toughened 6 mm">Toughened 6 mm</button><button data-v="DGU 5+12+5 mm">Double glazed</button></div></div>
+      <label class="tog"><input type="checkbox" id="cmesh"> Add mosquito mesh</label>
+      <div class="cfg-sum" id="cfgSum"></div>
+      <a class="btn btn-gold" id="cfgSend" target="_blank" rel="noopener" style="justify-content:center">Send this spec on WhatsApp →</a>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
   <div class="sec-head rv"><span class="eyebrow">Elevations</span><h2>Choose your system.</h2>
     <p class="lead">Front elevations of each configuration. Every unit is custom-sized to your opening — panel count and layout can be adapted to your architect's drawings.</p></div>
   <div class="grid g3">
@@ -27,6 +47,32 @@
     <div class="prod rv" id="door"><div class="elev" data-elev="door"></div><div class="body"><span class="tag">Doors</span><h3>uPVC Casement Doors</h3><p>Single or double-leaf hinged doors with multi-point locking — for balconies, utility and main openings.</p></div></div>
     <div class="prod rv" id="french"><div class="elev" data-elev="french"></div><div class="body"><span class="tag">Doors</span><h3>uPVC French Sliding Doors</h3><p>Wide sliding panels with slim interlocks for uninterrupted views to your garden or terrace.</p></div></div>
     <div class="prod rv" id="bifold"><div class="elev" data-elev="bifold"></div><div class="body"><span class="tag">Doors</span><h3>uPVC Bi-Fold Doors</h3><p>Panels fold and stack to one side, opening up the full width for seamless indoor-outdoor living.</p></div></div>
+  </div>
+</div></section>
+
+<section id="inside" style="padding-top:0"><div class="wrap">
+  <div class="sec-head rv"><span class="eyebrow">Inside the profile</span><h2>What makes a Prominance window perform.</h2>
+    <p class="lead">A cut through the frame and sash. Hover or tap a part to see what it does.</p></div>
+  <div class="xsec rv" id="xsec">
+    <svg viewBox="0 0 420 300" role="img" aria-label="Cross-section of a uPVC window profile">
+      <g data-p="glass" tabindex="0"><rect x="168" y="0" width="7" height="128" fill="#bfe1f3" stroke="#6fa6c4"/><rect x="211" y="0" width="7" height="128" fill="#bfe1f3" stroke="#6fa6c4"/><rect x="175" y="108" width="36" height="14" fill="#c9ccd3" stroke="#8a8f9c"/></g>
+      <g data-p="bead" tabindex="0"><path d="M218 92h24v38h-24z" fill="#fff" stroke="#1c2654" stroke-width="1.5"/><path d="M224 100h12v12h-12z" fill="none" stroke="#1c2654"/></g>
+      <g data-p="gasket" tabindex="0"><rect x="160" y="104" width="8" height="16" rx="3" fill="#222"/><rect x="242" y="104" width="8" height="16" rx="3" fill="#222" transform="translate(-24 0)"/><rect x="128" y="172" width="16" height="7" rx="3" fill="#222"/><rect x="262" y="172" width="16" height="7" rx="3" fill="#222"/></g>
+      <g data-p="sash" tabindex="0"><path d="M118 128h166v46H118z" fill="#fff" stroke="#1c2654" stroke-width="2"/><path d="M160 128v46M200 128v46M244 128v46" stroke="#1c2654" stroke-width="1.2"/></g>
+      <g data-p="frame" tabindex="0"><path d="M84 178h236v86H84z" fill="#fff" stroke="#1c2654" stroke-width="2.4"/><path d="M84 206h236M124 178v86M170 206v58M236 206v58M280 178v86" stroke="#1c2654" stroke-width="1.2"/></g>
+      <g data-p="steel" tabindex="0"><path d="M176 214v42h54v-42" fill="none" stroke="#7d8594" stroke-width="5"/><path d="M168 136v30h28v-30" fill="none" stroke="#7d8594" stroke-width="4"/></g>
+      <g data-p="drain" tabindex="0"><rect x="300" y="250" width="14" height="5" fill="#1c2654"/><path d="M307 262c-4 8 -2 14 0 18c2-4 4-10 0-18z" fill="#4a9be0"/><path d="M320 258q20 6 26 24" fill="none" stroke="#4a9be0" stroke-dasharray="3 3"/></g>
+      <text x="20" y="40" font-size="11" fill="#5d6478" font-family="Inter,sans-serif">OUTSIDE</text><text x="360" y="40" font-size="11" fill="#5d6478" font-family="Inter,sans-serif">INSIDE</text>
+    </svg>
+    <ul>
+      <li data-p="glass" tabindex="0"><b>Glazing unit</b><span>Single, toughened or double-glazed glass with a sealed spacer.</span></li>
+      <li data-p="gasket" tabindex="0"><b>EPDM gaskets</b><span>Soft seals that keep out dust, rain and noise.</span></li>
+      <li data-p="bead" tabindex="0"><b>Glazing bead</b><span>Holds the glass firmly in the sash.</span></li>
+      <li data-p="sash" tabindex="0"><b>Multi-chamber sash</b><span>Trapped air in each chamber slows heat transfer.</span></li>
+      <li data-p="frame" tabindex="0"><b>Multi-chamber frame</b><span>Prominance profile, rated for wind loads up to 3000 Pa.</span></li>
+      <li data-p="steel" tabindex="0"><b>Steel reinforcement</b><span>Galvanised steel inside the profile for strength.</span></li>
+      <li data-p="drain" tabindex="0"><b>Drainage slot</b><span>Channels rainwater back outside.</span></li>
+    </ul>
   </div>
 </div></section>
 
@@ -70,5 +116,6 @@
 
 <div id="ftr"></div>
 <script src="assets/main.js"></script>
+<script src="assets/interactive.js"></script>
 </body>
 </html>

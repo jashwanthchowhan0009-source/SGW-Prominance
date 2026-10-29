@@ -14,15 +14,19 @@
 <section class="hero"><div class="wrap">
   <div class="rv">
     <span class="eyebrow">Premium uPVC Windows & Doors</span>
+    <span class="hero-kicker">Try it: open the window and feel the difference.</span>
     <h1>Crafted for <span class="gold">Comfort.</span><br>Built for <span class="gold">Life.</span></h1>
     <p class="lead">Sekhara Glass Works fabricates and installs custom uPVC windows and doors using internationally certified <b>Prominance</b> profiles — engineered for Hyderabad's heat, rain and high-rise winds.</p>
     <div class="cta"><a href="contact.html#quote" class="btn btn-gold">Get a Free Quote →</a><a href="products.html" class="btn btn-line">View Products</a></div>
   </div>
-  <div class="hero-art rv">
-    <div class="sky"><i></i><i></i></div>
-    <div class="hero-win" data-elev="french"></div>
-    <div class="badge fl"><b>20 yrs</b><span>Profile warranty</span></div>
-    <div class="badge badge2 fl2"><b>3000 Pa</b><span>Wind-load rated</span></div>
+  <div class="lab rv" id="lab">
+    <div class="lab-stage"><canvas aria-label="Interactive window: drag the right sash to open it"></canvas><div class="lab-hint">Drag the window open</div></div>
+    <div class="lab-bar">
+      <div class="modes"><button data-mode="heat" class="on">Summer heat</button><button data-mode="rain">Monsoon rain</button><button data-mode="noise">City noise</button></div>
+      <label class="lab-range"><span>Closed</span><input type="range" id="labOpen" min="0" max="100" value="0" aria-label="Open the window"><span>Open</span></label>
+      <div class="meters"><div><span id="m1l">Indoor temp</span><b id="m1">24.0°C</b></div><div><span id="m2l">AC load</span><b id="m2">30%</b></div><div class="m3"><span>Status</span><b id="m3">Sealed by Prominance</b></div></div>
+      <p class="lab-note">Illustrative simulation. Drag the sash or use the slider, and switch the weather.</p>
+    </div>
   </div>
 </div></section>
 
@@ -38,7 +42,7 @@
   <div class="pgrid">
     <a href="about.html" class="pill rv"><span class="num">01</span><h3>About Us</h3><p>Custom uPVC fabrication & installation, powered by Prominance profiles.</p><span class="go">Read more →</span></a>
     <a href="about.html#experience" class="pill rv"><span class="num">02</span><h3>11+ Years Experience</h3><p>A decade of residential & commercial projects across Hyderabad.</p><span class="go">Our journey →</span></a>
-    <a href="products.html" class="pill rv"><span class="num">03</span><h3>Technical Specs & Elevations</h3><p>SKZ · BSI · IFT certified. Wind-load up to 3000 Pa.</p><span class="go">View elevations →</span></a>
+    <a href="products.html#configurator" class="pill rv"><span class="num">03</span><h3>Technical Specs & Elevations</h3><p>SKZ · BSI · IFT certified. Wind-load up to 3000 Pa.</p><span class="go">View elevations →</span></a>
     <a href="about.html#promoters" class="pill rv"><span class="num">04</span><h3>Background of Promoters</h3><p>Hands-on leadership rooted in glass & uPVC craftsmanship.</p><span class="go">Meet the team →</span></a>
     <a href="products.html#warranty" class="pill pill-gold rv"><span class="num">05</span><h3>20-Year Warranty</h3><p>Genuine Prominance profiles, backed for two decades.</p><span class="go">Warranty details →</span></a>
   </div>
@@ -86,5 +90,6 @@
 
 <div id="ftr"></div>
 <script src="assets/main.js"></script>
+<script src="assets/interactive.js"></script>
 </body>
 </html>
