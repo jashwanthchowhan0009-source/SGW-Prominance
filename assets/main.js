@@ -10,14 +10,14 @@ const page = document.body.dataset.page;
 const logo = `<svg width="46" height="46" viewBox="0 0 48 48" aria-hidden="true">
   <path d="M30 4C18 4 9 11 9 20c0 6 4 9 10 11-5 0-9-2-11-5 1 10 9 18 20 18 9 0 15-5 15-12 0-6-5-9-11-10 4 0 7 1 9 3C41 15 37 4 30 4z" fill="#2b3a7a"/>
   <path d="M30 4c-8 1-14 6-14 12 0 4 3 6 7 7-6 0-11-3-12-8C13 8 21 3 30 4z" fill="#d32f3a"/></svg>`;
-const brand = `<a href="index.html" class="brand" aria-label="SGW uPVC home">${logo}
-  <span class="brand-txt"><b>SGW</b><small>uPVC · Powered by <em>Prominance</em></small></span></a>`;
+const brand = `<a href="index.html" class="brand" aria-label="SGW Prominance home">${logo}
+  <span class="brand-txt"><b>SGW <em class="pm">Prominance</em></b><small>uPVC Window Systems</small></span></a>`;
 
 const links = [["index.html","Home","home"],["about.html","About Us","about"],["products.html","Products & Specs","products"],["contact.html","Contact","contact"]];
 
 document.getElementById("hdr").outerHTML = `
 <div class="top"><div class="wrap">
-  <span class="hide-sm">Sekhara Glass Works · 11+ years of uPVC fabrication in Hyderabad</span>
+  <span class="hide-sm">www.sgwprominance.com · 11+ years of uPVC fabrication in Hyderabad</span>
   <span><a href="${tel(SITE.phones[0])}">${SITE.phones[0]}</a> &nbsp;·&nbsp; <a href="mailto:${SITE.email}">${SITE.email}</a></span>
 </div></div>
 <header class="nav"><div class="wrap">${brand}
@@ -37,9 +37,9 @@ document.getElementById("ftr").outerHTML = `
     <div><h4>Explore</h4><ul>${links.map(([h,t])=>`<li><a href="${h}">${t}</a></li>`).join("")}</ul></div>
     <div><h4>Products</h4><ul><li>Sliding Windows</li><li>Casement Windows</li><li>Casement Doors</li><li>French Sliding Doors</li><li>Bi-Fold Doors</li></ul></div>
     <div><h4>Reach us</h4><ul>${SITE.phones.map(p=>`<li><a href="${tel(p)}">${p}</a></li>`).join("")}
-      <li><a href="mailto:${SITE.email}">${SITE.email}</a></li><li>${SITE.address}</li></ul></div>
+      <li><a href="mailto:${SITE.email}">${SITE.email}</a></li><li><a href="https://www.sgwprominance.com">www.sgwprominance.com</a></li><li>${SITE.address}</li></ul></div>
   </div>
-  <div class="copy"><span>© ${new Date().getFullYear()} Sekhara Glass Works (SGW). All rights reserved.</span><span>Prominance is a registered brand of its respective owner.</span></div>
+  <div class="copy"><span>© ${new Date().getFullYear()} SGW Prominance · Sekhara Glass Works. All rights reserved.</span><span>Prominance is a registered brand of its respective owner.</span></div>
 </div></footer>
 <a class="wa" href="https://wa.me/919121878787" target="_blank" rel="noopener" aria-label="WhatsApp">
 <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.2.1.7-.1 1.1z"/></svg></a>`;
