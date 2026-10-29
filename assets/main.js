@@ -73,6 +73,7 @@ function elev(type){
     g+=`<path d="M${x0+iw/2+8} ${y0+ih-8} L${x0+iw*.75} ${y0+8} L${x0+iw-8} ${y0+ih-8}" fill="none" stroke="${A}" stroke-width="1.6" stroke-dasharray="6 5"/>`;}
   return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${type} elevation">${g}</svg>`;
 }
+window.SGW_ELEV = elev;
 document.querySelectorAll("[data-elev]").forEach(el => el.innerHTML = elev(el.dataset.elev));
 
 // Reveal on scroll
