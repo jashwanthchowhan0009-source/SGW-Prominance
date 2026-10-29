@@ -46,7 +46,13 @@ document.getElementById("ftr").outerHTML = `
 
 // Menu
 const menu = document.getElementById("menu"), burger = document.getElementById("burger");
-burger.onclick = () => { menu.classList.toggle("open"); burger.classList.toggle("x"); };
+burger.onclick = () => { const o = menu.classList.toggle("open"); burger.classList.toggle("x", o); document.body.classList.toggle("menu-open", o); burger.setAttribute("aria-expanded", o); };
+menu.insertAdjacentHTML("beforeend", `<div class="menu-extra"><span>Talk to us</span><a href="${tel(SITE.phones[0])}">${SITE.phones[0]}</a><a href="mailto:${SITE.email}">${SITE.email}</a><small>${SITE.address}</small></div>`);
+// Mobile app-style action bar
+document.body.insertAdjacentHTML("beforeend", `<nav class="mbar" aria-label="Quick actions">
+  <a href="${tel(SITE.phones[0])}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+  <a href="https://wa.me/919121878787" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.3-.4.8-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>WhatsApp</a>
+  <a class="q" href="contact.html#quote">Get a Quote</a></nav>`);
 
 // Elevation drawings: data-elev="sliding|casement|door|french|bifold|tilt"
 const F = "#ffffff", S = "#0b1f3a", G = "#cfe6f5", A = "#0077c8";
